@@ -264,7 +264,7 @@ __EOF__
     terminus site connection-mode --site="$PSITE" --env="$PENV" --set=sftp
     check "Changed connection mode to 'sftp' for $PSITE $PENV environment" "Could not change connection mode to 'sftp' for $PSITE $PENV environment"
     # Run panopoly makefiles
-    drush --strict=0 @pantheon.$PSITE.$PENV make --prepare-install --no-gitinfofile --contrib-destination=profiles/panopoly profiles/panopoly/build-panopoly.make
+    drush --strict=0 @pantheon.$PSITE.$PENV make --prepare-install --no-gitinfofile --contrib-destination=profiles/panopoly profiles/panopoly/build-panopoly-pantheon.make
     # Create a new site with site-install.
     drush --strict=0 @pantheon.$PSITE.$PENV -y site-install panopoly --site-name="$SITE_NAME Pantheon Test Site" --account-name=admin --account-pass="jam123"
     aborterr "Could not install Drupal on Pantheon test site"
